@@ -1,4 +1,4 @@
-# terraform-aws-eks
+# terraform-aws-pulsar
 
 ```bash
 # aws-cli > 1.15.32
