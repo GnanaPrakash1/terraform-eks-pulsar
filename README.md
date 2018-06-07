@@ -33,7 +33,16 @@ kubectl apply -f .output/aws-auth.yml
 # calico
 kubectl apply -f ./data/calico.yml
 
-# sample
+# cluster role
+kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default
+
+# deploy dashboard access control
+kubectl apply -f ./data/kube-dashboard-access.yml
+
+# deploy dashboard
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+
+# TODO pulsar
 kubectl apply -f ./data/sample-web.yml
 
 # get
